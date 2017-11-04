@@ -17,9 +17,17 @@ public class b03_数组中重复的数字 {
 	public static void main(String[] args) {
 //		int[] arr = {2,3,1,0,2,5,3};
 		int[] arr = {2, 1, 3, 0, 4};
+		int ret;
+		//【思路1】快排
+		ret = duplicate1(arr);
+		System.out.println(ret);
 		
-		//【思路1】快排。
-		int ret = duplicate3(arr);
+		//【思路2】哈希表
+		ret = duplicate2(arr);
+		System.out.println(ret);
+				
+		//【思路3】数组规律
+		ret = duplicate3(arr);
 		System.out.println(ret);
 	}
 	
@@ -63,7 +71,7 @@ public class b03_数组中重复的数字 {
 	}
 	
 	/*
-	 * 【思路3】题目特点：数组中n个元素都在0 ~ n-1范围内。可知，如果数组中没有重复元素，
+	 * 【思路3】数组规律：数组中n个元素都在0 ~ n-1范围内。可知，如果数组中没有重复元素，
 	 * 		数组排序后下标i位置的数字为i，即arr[0]=0, arr[1]=1, … , arr[n-1]=n-1;
 	 * 		由于数组中存在重复元素，则某些下标可能会存在多个数字，同时有些位置可能没有数字。
 	 * 
